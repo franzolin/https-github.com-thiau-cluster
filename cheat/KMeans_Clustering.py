@@ -44,7 +44,8 @@ def main():
 
     df = pd.read_csv(args.file_path)
     docs = df[args.column_name].tolist()
-    print(cluster(documents=docs, num_clusters=int(args.num_clusters)))
+    result = cluster(documents=docs, num_clusters=int(args.num_clusters))
+    print(result.to_csv())
 
 
 if __name__ == '__main__':
